@@ -579,10 +579,68 @@
     .prayer-time { font-size: 1.5rem; }
     .prayer-index { display: none; }
   }
+  /* --- AJOUT POUR LE THÈME CLAIR --- */
+
+/* Configuration des couleurs du Thème Clair */
+body.light-theme {
+  --dark: #F9F7F2; /* Fond crème type papyrus */
+  --dark-2: #F0EDE8;
+  --dark-3: #E8E4D8;
+  --dark-4: #DDD8C8;
+  --text: #2C2C2C;
+  --text-dim: #706850;
+  --bg-overlay: rgba(0,0,0,0.03);
+  --border-alpha: rgba(139,111,62,0.25);
+  --input-bg: #FFFFFF;
+}
+
+/* Style du bouton de bascule */
+.theme-switch {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  z-index: 10;
+}
+
+.theme-btn {
+  background: transparent;
+  border: 1px solid var(--border-alpha);
+  color: var(--gold);
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+  border-color: var(--gold);
+  background: var(--bg-overlay);
+}
+
+/* Correction de lisibilité pour le thème clair */
+.light-theme .btn-search {
+  color: #FFF;
+}
+
+.light-theme .prayer-card.current .prayer-time {
+  color: var(--gold-dim);
+}
 </style>
 </head>
 <body>
-
+<div class="theme-switch">
+  <button class="theme-btn" id="themeBtn" title="Changer le thème">
+    <svg id="themeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Icone de lune par défaut -->
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+  </button>
+</div>
 <div class="container">
 
   <!-- HEADER -->
@@ -647,6 +705,38 @@
 </div>
 
 <script>
+// --- LOGIQUE DU CHANGEMENT DE THÈME ---
+const themeBtn = document.getElementById('themeBtn');
+const themeIcon = document.getElementById('themeIcon');
+const body = document.body;
+
+// Vérification de la préférence sauvegardée au chargement
+if (localStorage.getItem('theme') === 'light') {
+  enableLightTheme();
+}
+
+themeBtn.addEventListener('click', () => {
+  // Bascule entre les thèmes
+  if (body.classList.contains('light-theme')) {
+    disableLightTheme();
+  } else {
+    enableLightTheme();
+  }
+});
+
+function enableLightTheme() {
+  body.classList.add('light-theme');
+  localStorage.setItem('theme', 'light');
+  // Icône Soleil (SVG)
+  themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+}
+
+function disableLightTheme() {
+  body.classList.remove('light-theme');
+  localStorage.setItem('theme', 'dark');
+  // Icône Lune (SVG)
+  themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+}
 // ============================================================
 // CITIES DATABASE (latitude, longitude, timezone offset UTC)
 // ============================================================
