@@ -492,6 +492,8 @@
     display: none;
     margin-top: 30px;
     animation: scanline 0.5s ease-out;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .month-table {
@@ -641,6 +643,88 @@
       background: #e0e0e0 !important;
       border-color: #000 !important;
       color: #000 !important;
+    }
+  }
+
+  /* ========================================================== */
+  /* RESPONSIVE DESIGN (SMARTPHONES)                            */
+  /* ========================================================== */
+  @media (max-width: 768px) {
+    .container {
+      padding: 20px 10px;
+    }
+    
+    .search-section {
+      padding: 20px 15px;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+    }
+    .search-section::before {
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+    }
+    
+    .search-row {
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .btn {
+      padding: 15px;
+    }
+    
+    .action-row {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
+    }
+    
+    .btn-print {
+      margin-left: 0;
+    }
+    
+    .date-nav {
+      padding: 10px 5px;
+      gap: 8px;
+    }
+    
+    .date-display {
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+    
+    .btn-nav {
+      width: 35px;
+      height: 35px;
+    }
+    
+    .prayer-card {
+      padding: 15px 12px;
+    }
+    
+    .prayer-left {
+      gap: 10px;
+    }
+    
+    .prayer-time {
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+    }
+    
+    .prayer-name-fr {
+      font-size: 1.1rem;
+    }
+    
+    h1 {
+      font-size: clamp(1.8rem, 8vw, 2.5rem);
+      letter-spacing: 2px;
+    }
+    
+    .location-info {
+      padding: 15px 10px;
+    }
+    
+    .location-name {
+      font-size: 1.2rem;
+      word-break: break-word;
     }
   }
 </style>
