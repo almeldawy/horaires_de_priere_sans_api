@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* DARK MODE (Thème par défaut) */
     --primary: #3b82f6;
     --primary-hover: #60a5fa;
     --bg-color: #0f172a;
@@ -25,13 +24,10 @@
     --radius-lg: 16px;
     --card-current: rgba(59, 130, 246, 0.15);
     --card-current-border: #3b82f6;
-    
-    /* Variables de compatibilité pour le JavaScript existant */
     --neon-yellow: var(--primary);
   }
-  
+
   body.light-theme {
-    /* LIGHT MODE */
     --primary: #2563eb;
     --primary-hover: #1d4ed8;
     --bg-color: #f8fafc;
@@ -44,10 +40,9 @@
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --card-current: #eff6ff;
     --card-current-border: #bfdbfe;
-    
     --neon-yellow: var(--primary);
   }
-  
+
   body {
     background: var(--bg-color);
     color: var(--text-main);
@@ -59,18 +54,10 @@
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 20px;
-  }
+  .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
 
-  /* HEADER */
-  header {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  
+  header { text-align: center; margin-bottom: 40px; }
+
   .arabic-bismillah {
     font-family: 'Amiri', serif;
     font-size: 1.8rem;
@@ -87,10 +74,7 @@
     margin: 0;
     line-height: 1.2;
   }
-  
-  h1 span {
-    color: var(--primary);
-  }
+  h1 span { color: var(--primary); }
 
   .subtitle {
     margin-top: 10px;
@@ -102,7 +86,6 @@
 
   .ornament { display: none; }
 
-  /* SEARCH SECTION */
   .search-section {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -113,16 +96,8 @@
     transition: background-color 0.3s ease, border-color 0.3s ease;
   }
 
-  .search-row {
-    display: flex;
-    gap: 15px;
-    align-items: stretch;
-  }
-
-  .search-wrapper {
-    flex: 1;
-    position: relative;
-  }
+  .search-row { display: flex; gap: 15px; align-items: stretch; }
+  .search-wrapper { flex: 1; position: relative; }
 
   input[type="text"] {
     width: 100%;
@@ -137,19 +112,14 @@
     transition: all 0.2s;
     box-sizing: border-box;
   }
-
   input[type="text"]:focus {
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
   }
-  
-  input[type="text"]::placeholder {
-    color: var(--text-dim);
-  }
+  input[type="text"]::placeholder { color: var(--text-dim); }
 
   .search-icon { display: none; }
 
-  /* Buttons */
   .btn {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -166,20 +136,10 @@
     justify-content: center;
     gap: 8px;
   }
+  .btn:hover { background: var(--surface-hover); }
 
-  .btn:hover {
-    background: var(--surface-hover);
-  }
-
-  .btn-search {
-    background: var(--primary);
-    color: white;
-    border: none;
-  }
-  
-  .btn-search:hover {
-    background: var(--primary-hover);
-  }
+  .btn-search { background: var(--primary); color: white; border: none; }
+  .btn-search:hover { background: var(--primary-hover); }
 
   .btn-active {
     background: var(--primary) !important;
@@ -187,7 +147,6 @@
     border-color: var(--primary) !important;
   }
 
-  /* Action Row */
   .action-row {
     display: flex;
     justify-content: center;
@@ -197,7 +156,6 @@
     border-top: 1px solid var(--border);
   }
 
-  /* Date nav */
   .date-nav {
     display: flex;
     align-items: center;
@@ -210,11 +168,7 @@
     border-radius: var(--radius-md);
   }
 
-  .date-display {
-    font-weight: 600;
-    font-size: 1.1rem;
-    text-align: center;
-  }
+  .date-display { font-weight: 600; font-size: 1.1rem; text-align: center; }
 
   .date-hijri {
     display: block;
@@ -235,12 +189,8 @@
     transition: all 0.2s;
     font-size: 1.2rem;
   }
-  
-  .btn-nav:hover {
-    background: var(--surface-hover);
-  }
+  .btn-nav:hover { background: var(--surface-hover); }
 
-  /* LOCATION INFO */
   .location-info {
     text-align: center;
     margin-bottom: 24px;
@@ -250,24 +200,10 @@
     border: 1px solid var(--border);
     box-shadow: var(--shadow-sm);
   }
+  .location-name { font-weight: 600; font-size: 1.4rem; color: var(--text-main); }
+  .location-coords { color: var(--text-dim); font-size: 0.9rem; margin-top: 6px; }
 
-  .location-name {
-    font-weight: 600;
-    font-size: 1.4rem;
-    color: var(--text-main);
-  }
-
-  .location-coords {
-    color: var(--text-dim);
-    font-size: 0.9rem;
-    margin-top: 6px;
-  }
-
-  /* PRAYER CARDS */
-  .prayers-grid {
-    display: grid;
-    gap: 16px;
-  }
+  .prayers-grid { display: grid; gap: 16px; }
 
   .prayer-card {
     background: var(--surface);
@@ -280,42 +216,22 @@
     transition: all 0.2s;
     box-shadow: var(--shadow-sm);
   }
-
   .prayer-card:hover {
     border-color: var(--primary);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
   }
-
   .prayer-card.current {
     background: var(--card-current);
     border-color: var(--card-current-border);
   }
 
   .prayer-left { display: flex; align-items: center; gap: 20px; }
-  
-  .prayer-index {
-    color: var(--text-dim);
-    font-size: 0.85rem;
-    font-weight: 600;
-  }
-
-  .prayer-icon {
-    font-size: 1.6rem;
-  }
-
+  .prayer-index { color: var(--text-dim); font-size: 0.85rem; font-weight: 600; }
+  .prayer-icon { font-size: 1.6rem; }
   .prayer-names { display: flex; flex-direction: column; }
-  
-  .prayer-name-fr {
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: var(--text-main);
-  }
-  
-  .prayer-card.current .prayer-name-fr {
-    color: var(--primary);
-  }
-
+  .prayer-name-fr { font-weight: 600; font-size: 1.1rem; color: var(--text-main); }
+  .prayer-card.current .prayer-name-fr { color: var(--primary); }
   .prayer-name-ar {
     font-family: 'Amiri', serif;
     color: var(--text-dim);
@@ -324,25 +240,10 @@
   }
 
   .prayer-right { text-align: right; }
+  .prayer-time { font-weight: 700; font-size: 2rem; letter-spacing: -0.02em; }
+  .prayer-card.current .prayer-time { color: var(--primary); }
+  .prayer-remaining { color: var(--primary); font-size: 0.85rem; font-weight: 500; margin-top: 4px; }
 
-  .prayer-time {
-    font-weight: 700;
-    font-size: 2rem;
-    letter-spacing: -0.02em;
-  }
-
-  .prayer-card.current .prayer-time {
-    color: var(--primary);
-  }
-
-  .prayer-remaining {
-    color: var(--primary);
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-top: 4px;
-  }
-
-  /* Method info */
   .method-badge {
     margin-top: 24px;
     padding: 16px;
@@ -354,7 +255,6 @@
     font-size: 0.85rem;
   }
 
-  /* Next badge */
   .next-badge {
     background: var(--primary);
     color: white;
@@ -366,7 +266,6 @@
     font-weight: 600;
   }
 
-  /* Table des horaires du mois */
   #monthTableContainer {
     display: none;
     margin-top: 30px;
@@ -375,7 +274,6 @@
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
   }
-  
   #monthTableContainer h3 {
     color: var(--text-main) !important;
     font-family: var(--font-main) !important;
@@ -391,35 +289,21 @@
     border-radius: var(--radius-md);
     overflow: hidden;
   }
-
   .month-table th, .month-table td {
     border-bottom: 1px solid var(--border);
     padding: 14px;
     text-align: center;
     font-size: 0.95rem;
   }
-
-  .month-table th {
-    background: var(--bg-color);
-    font-weight: 600;
-    color: var(--text-main);
-  }
-
-  .month-table tr:last-child td {
-    border-bottom: none;
-  }
-
-  .month-table tr:hover td {
-    background: var(--surface-hover);
-  }
-  
+  .month-table th { background: var(--bg-color); font-weight: 600; color: var(--text-main); }
+  .month-table tr:last-child td { border-bottom: none; }
+  .month-table tr:hover td { background: var(--surface-hover); }
   .month-table tr.today-row td {
     background: var(--card-current);
     color: var(--primary);
     font-weight: 600;
   }
 
-  /* Theme toggle - Floating Action Button */
   .theme-toggle {
     display: flex;
     position: fixed;
@@ -439,13 +323,11 @@
     z-index: 1000;
     transition: all 0.2s ease;
   }
-  
   .theme-toggle:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
 
-  /* Autocomplete */
   .autocomplete-list {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -461,7 +343,7 @@
     display: none;
   }
   .autocomplete-list.show { display: block; }
-  
+
   .autocomplete-item {
     padding: 12px 20px;
     color: var(--text-main);
@@ -470,18 +352,9 @@
     transition: background-color 0.2s;
   }
   .autocomplete-item:last-child { border-bottom: none; }
-  
-  .autocomplete-item:hover {
-    background: var(--surface-hover);
-  }
-  
-  .autocomplete-item .city-country {
-    color: var(--text-dim);
-    font-size: 0.85rem;
-    margin-top: 2px;
-  }
+  .autocomplete-item:hover { background: var(--surface-hover); }
+  .autocomplete-item .city-country { color: var(--text-dim); font-size: 0.85rem; margin-top: 2px; }
 
-  /* Loading / Messages */
   .error-msg {
     background: #fee2e2;
     color: #991b1b;
@@ -492,7 +365,7 @@
     display: none;
     font-weight: 500;
   }
-  
+
   .placeholder-state {
     background: var(--surface);
     border-radius: var(--radius-md);
@@ -501,24 +374,11 @@
     text-align: center;
     color: var(--text-dim);
   }
-  .placeholder-icon {
-    font-size: 2.5rem;
-    margin-bottom: 12px;
-  }
-  .placeholder-title {
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: var(--text-main);
-  }
-  .placeholder-sub {
-    font-size: 0.9rem;
-    margin-top: 4px;
-  }
-  .loading {
-    display: none;
-    text-align: center;
-    margin-bottom: 20px;
-  }
+  .placeholder-icon { font-size: 2.5rem; margin-bottom: 12px; }
+  .placeholder-title { font-weight: 600; font-size: 1.1rem; color: var(--text-main); }
+  .placeholder-sub { font-size: 0.9rem; margin-top: 4px; }
+
+  .loading { display: none; text-align: center; margin-bottom: 20px; }
   .spinner {
     width: 30px;
     height: 30px;
@@ -528,14 +388,9 @@
     animation: spin 1s linear infinite;
     margin: 0 auto;
   }
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+  @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-  .btn-print {
-    display: none;
-  }
+  .btn-print { display: none; }
 
   @media print {
     @page { size: A4 portrait; margin: 1.5cm; }
@@ -550,7 +405,6 @@
     .month-table tr.today-row td { font-weight: bold !important; background: #e0e0e0 !important; }
   }
 
-  /* RESPONSIVE DESIGN (SMARTPHONES) */
   @media (max-width: 768px) {
     .container { padding: 20px 16px; }
     .search-section { padding: 20px; }
@@ -574,11 +428,6 @@
 <div class="container">
   <header>
     <div class="arabic-bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
-    <div class="ornament">
-      <div class="ornament-line"></div>
-      <div class="ornament-diamond"></div>
-      <div class="ornament-line"></div>
-    </div>
     <h1>Horaires des <span>Prières</span></h1>
     <p class="subtitle">Ligue Islamique Mondiale &nbsp;·&nbsp; Méthode MWL</p>
   </header>
@@ -586,7 +435,7 @@
     <div class="search-row">
       <div class="search-wrapper">
         <span class="search-icon">🔍</span>
-        <input type="text" id="cityInput" placeholder="> RECHERCHER UNE VILLE_" autocomplete="off" />
+        <input type="text" id="cityInput" placeholder="Rechercher une ville…" autocomplete="off" />
         <div class="autocomplete-list" id="autocompleteList"></div>
       </div>
       <button class="btn btn-geo" id="geoBtn">
@@ -597,11 +446,11 @@
         </svg>
         POSITION
       </button>
-      <button class="btn btn-search" id="searchBtn">EXECUTE</button>
+      <button class="btn btn-search" id="searchBtn">RECHERCHER</button>
     </div>
-    
+
     <div class="action-row">
-      <button class="btn btn-month" id="monthBtn">AFFICHER CALENDRIER MENSUEL</button>
+      <button class="btn btn-month" id="monthBtn">AFFICHER LE CALENDRIER MENSUEL</button>
       <button class="btn btn-print" id="printBtn">🖨️ IMPRIMER LE MOIS</button>
     </div>
 
@@ -622,32 +471,32 @@
     <div class="placeholder-state">
       <div class="placeholder-icon">📡</div>
       <div class="placeholder-title">EN ATTENTE DE DONNÉES LOCALES</div>
-      <div class="placeholder-sub">VEUILLEZ INITIALISER UNE RECHERCHE</div>
+      <div class="placeholder-sub">Recherchez une ville ou utilisez votre position</div>
     </div>
   </div>
-  
-  <div id="monthTableContainer">
-    <!-- Le tableau mensuel sera injecté ici -->
-  </div>
+
+  <div id="monthTableContainer"></div>
 </div>
 <script src="communes.js"></script>
 <script>
 // ============================================================
-// CITIES DATABASE (latitude, longitude, timezone offset UTC)
+// BASE DE VILLES (communes.js) — fallback vide si absent
+// Format attendu : { name, country, lat, lng, tz }
+//   tz = décalage UTC "hiver" (ex. 1 pour la France) OU nom IANA ("Europe/Paris")
 // ============================================================
-// Import de la base de données depuis communes.js (assumé existant)
-// Si le fichier communes.js n'existe pas, pensez à déclarer `const CITIES = []` en fallback.
 const CITIES = typeof communesFrance !== 'undefined' ? communesFrance : [];
 
 // ============================================================
-// PRAYER TIME CALCULATION — MUSLIM WORLD LEAGUE (MWL)
-// Fajr angle: 18°  |  Isha angle: 17°
-// Asr: Hanafi (shadow = 2x) can be toggled, default Shafi'i (shadow = 1x)
+// CALCUL DES HORAIRES — MUSLIM WORLD LEAGUE (MWL)
+// Fajr 18° | Isha 17° | Asr Shafi'i (ombre x1)
 // ============================================================
 const DEG = Math.PI / 180;
 const RAD = 180 / Math.PI;
 const MWL_FAJR_ANGLE = 18.0;
-const MWL_ISHA_ANGLE  = 17.0;
+const MWL_ISHA_ANGLE = 17.0;
+const ASR_SHADOW_FACTOR = 1; // 2 pour Hanafi
+
+function normDeg(x) { x %= 360; return x < 0 ? x + 360 : x; }
 
 function julianDay(Y, M, D) {
   if (M <= 2) { Y--; M += 12; }
@@ -658,121 +507,123 @@ function julianDay(Y, M, D) {
 
 function sunPosition(jd) {
   const D = jd - 2451545.0;
-  // Mean anomaly
-  const g = (357.529 + 0.98560028 * D) % 360;
-  // Mean longitude
-  const q = (280.459 + 0.98564736 * D) % 360;
-  // Ecliptic longitude
-  const L = (q + 1.915 * Math.sin(g * DEG) + 0.020 * Math.sin(2 * g * DEG)) % 360;
-  // Obliquity of ecliptic
-  const e = 23.439 - 0.0000004 * D;
-  // Right ascension (hours)
+  const g = normDeg(357.529 + 0.98560028 * D);   // anomalie moyenne
+  const q = normDeg(280.459 + 0.98564736 * D);   // longitude moyenne
+  const L = normDeg(q + 1.915 * Math.sin(g * DEG) + 0.020 * Math.sin(2 * g * DEG));
+  const e = 23.439 - 0.00000036 * D;             // obliquité
+
   let RA = Math.atan2(Math.cos(e * DEG) * Math.sin(L * DEG), Math.cos(L * DEG)) * RAD / 15;
   if (RA < 0) RA += 24;
-  // Declination
+
   const decl = Math.asin(Math.sin(e * DEG) * Math.sin(L * DEG)) * RAD;
-  
-  // Équation du temps (heures)
-  let EqT = (q / 15 - RA + 24) % 24;
-  
-  // [CORRECTION] Normaliser l'équation du temps autour de zéro
-  // Empêche les décalages aberrants si l'écart calcule une valeur brute > 12h
-  if (EqT > 12) {
-    EqT -= 24; 
-  }
-  
+
+  // Équation du temps (heures), ramenée dans [-12 ; 12]
+  let EqT = q / 15 - RA;
+  while (EqT > 12) EqT -= 24;
+  while (EqT < -12) EqT += 24;
+
   return { decl, EqT };
 }
 
 function hourAngle(angle, lat, decl) {
-  const cosH = (Math.sin(angle * DEG) - Math.sin(lat * DEG) * Math.sin(decl * DEG)) 
+  const cosH = (Math.sin(angle * DEG) - Math.sin(lat * DEG) * Math.sin(decl * DEG))
              / (Math.cos(lat * DEG) * Math.cos(decl * DEG));
-  if (Math.abs(cosH) > 1) return null; // never rises/sets
+  if (cosH > 1 || cosH < -1) return null; // angle jamais atteint
   return Math.acos(cosH) * RAD / 15;
 }
 
 function asrHourAngle(lat, decl, shadowFactor) {
-  // Calcul de l'angle pour la prière de l'Asr
-  // shadowFactor = 1 pour Shafi'i, 2 pour Hanafi
   const angle = Math.atan(1 / (shadowFactor + Math.tan(Math.abs(lat - decl) * DEG))) * RAD;
   return hourAngle(angle, lat, decl);
 }
 
 function calcPrayerTimes(date, lat, lng, tzOffset) {
-  const Y = date.getFullYear();
-  const M = date.getMonth() + 1;
-  const D = date.getDate();
-  const jd = julianDay(Y, M, D);
-
+  // Déclinaison / équation du temps évaluées au midi solaire local (et non à 0h UTC)
+  const jd = julianDay(date.getFullYear(), date.getMonth() + 1, date.getDate()) + 0.5 - lng / 360;
   const { decl, EqT } = sunPosition(jd);
 
-  // Solar noon (local time)
   const Dhuhr = 12 + tzOffset - lng / 15 - EqT;
 
-  // Sun zenith correction: -0.833° for sunrise/sunset (refraction + disc)
-  const sunriseDuration = hourAngle(-0.8333, lat, decl);
-  if (sunriseDuration === null) return null;
+  const sunH = hourAngle(-0.8333, lat, decl);
+  if (sunH === null) return null; // soleil de minuit / nuit polaire
 
-  const Sunrise = Dhuhr - sunriseDuration;
-  const Sunset  = Dhuhr + sunriseDuration;
+  const Sunrise = Dhuhr - sunH;
+  const Sunset  = Dhuhr + sunH;
 
-  let Fajr, Isha;
+  // Fajr et Isha calculés séparément, durée plafonnée à 1/7 de la nuit
+  // (évite les sauts brusques en été aux latitudes élevées)
+  const night = (Sunrise + 24) - Sunset;
+  const cap = night / 7;
   const fajrH = hourAngle(-MWL_FAJR_ANGLE, lat, decl);
   const ishaH = hourAngle(-MWL_ISHA_ANGLE, lat, decl);
 
-  // [CORRECTION] Gestion des latitudes élevées (Nuits blanches d'été)
-  // Si le soleil ne descend jamais à 18° ou 17° sous l'horizon, hourAngle renvoie null.
-  if (fajrH === null || ishaH === null) {
-    // Calcul de la durée de la nuit (de Sunset à Sunrise le lendemain)
-    let nightDuration = (Sunrise + 24) - Sunset; 
-    
-    // Méthode de repli : 1/7ème de la nuit
-    const portion = nightDuration / 7; 
-    
-    Fajr = Sunrise - portion;
-    Isha = Sunset + portion;
-  } else {
-    // Comportement normal
-    Fajr = Dhuhr - fajrH;
-    Isha = Dhuhr + ishaH;
-  }
+  const fajrDelta = fajrH === null ? Infinity : Sunrise - (Dhuhr - fajrH);
+  const ishaDelta = ishaH === null ? Infinity : (Dhuhr + ishaH) - Sunset;
 
-  // Asr: Shafi'i (shadow = 1x)
-  const asrH = asrHourAngle(lat, decl, 1);
+  const Fajr = Sunrise - Math.min(fajrDelta, cap);
+  const Isha = Sunset + Math.min(ishaDelta, cap);
+
+  const asrH = asrHourAngle(lat, decl, ASR_SHADOW_FACTOR);
   const Asr = asrH !== null ? Dhuhr + asrH : null;
-  
-  // Maghrib = Sunset (standard)
-  const Maghrib = Sunset;
 
-  return { Fajr, Sunrise, Dhuhr, Asr, Maghrib, Isha };
+  return { Fajr, Sunrise, Dhuhr, Asr, Maghrib: Sunset, Isha };
 }
 
 function decimalToTime(decimal) {
-  if (decimal === null || isNaN(decimal)) return '--:--';
-  
-  let h = decimal % 24;
-  if (h < 0) h += 24;
-  
-  let hours = Math.floor(h);
-  let minutes = Math.round((h - hours) * 60);
-  
-  // [CORRECTION] Empêcher l'affichage de "24:00"
-  if (minutes === 60) {
-    hours = (hours + 1) % 24; // Le modulo 24 ramène "24" à "0"
-    minutes = 0;
-  }
-  
+  if (decimal === null || decimal === undefined || isNaN(decimal)) return '--:--';
+  // On arrondit en minutes totales d'abord : évite "13:60" et "24:00"
+  let total = Math.round(decimal * 60);
+  total = ((total % 1440) + 1440) % 1440;
+  const hours = Math.floor(total / 60);
+  const minutes = total % 60;
   return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
 }
 
 // ============================================================
-// HIJRI DATE CONVERSION
+// FUSEAU HORAIRE & HEURE D'ÉTÉ (indépendants du navigateur)
 // ============================================================
-function toHijri(date) {
-  const Y = date.getFullYear();
-  const M = date.getMonth() + 1;
-  const D = date.getDate();
-  const JD = julianDay(Y, M, D) + 0.5;
+function tzOffsetFromIana(date, tzName) {
+  const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), 12));
+  const o = {};
+  new Intl.DateTimeFormat('en-US', {
+    timeZone: tzName, hourCycle: 'h23',
+    year: 'numeric', month: 'numeric', day: 'numeric',
+    hour: 'numeric', minute: 'numeric', second: 'numeric'
+  }).formatToParts(d).forEach(p => { o[p.type] = +p.value; });
+  return (Date.UTC(o.year, o.month - 1, o.day, o.hour, o.minute, o.second) - d.getTime()) / 3600000;
+}
+
+function lastSundayUTC(year, monthIdx) {
+  const d = new Date(Date.UTC(year, monthIdx + 1, 0));
+  d.setUTCDate(d.getUTCDate() - d.getUTCDay());
+  return d.getTime();
+}
+
+// Heure d'été UE : dernier dimanche de mars 01:00 UTC → dernier dimanche d'octobre 01:00 UTC
+function isEuDst(date) {
+  const y = date.getFullYear();
+  const start = lastSundayUTC(y, 2) + 3600000;
+  const end = lastSundayUTC(y, 9) + 3600000;
+  const t = Date.UTC(y, date.getMonth(), date.getDate(), 12);
+  return t >= start && t < end;
+}
+
+function getTzOffset(date, loc) {
+  if (loc.tzName) {
+    try { return tzOffsetFromIana(date, loc.tzName); } catch (e) { /* repli ci-dessous */ }
+  }
+  let base = Number(loc.tz);
+  if (isNaN(base)) base = Math.round(loc.lng / 15);
+  const inEurope = loc.lat >= 34 && loc.lng > -25 && loc.lng < 45;
+  if (inEurope && base >= 0 && base <= 2) return base + (isEuDst(date) ? 1 : 0);
+  return base;
+}
+
+// ============================================================
+// DATE HIJRI
+// ============================================================
+function toHijriFallback(date) {
+  const JD = julianDay(date.getFullYear(), date.getMonth() + 1, date.getDate()) + 0.5;
   const Z = Math.floor(JD);
   const L = Z - 1948440 + 10632;
   const N = Math.floor((L - 1) / 10631);
@@ -784,21 +635,33 @@ function toHijri(date) {
   const month = Math.floor((24 * L3) / 709);
   const day = L3 - Math.floor((709 * month) / 24);
   const year = 30 * N + J - 30;
+  const names = ['Muharram','Safar','Rabi al-Awwal','Rabi al-Thani','Jumada al-Ula','Jumada al-Akhira',
+                 'Rajab','Sha\'ban','Ramadan','Shawwal','Dhul Qi\'dah','Dhul Hijjah'];
+  return `${day} ${names[month - 1]} ${year} H`;
+}
 
-  const hijriMonths = [
-    'Muharram','Safar','Rabi al-Awwal','Rabi al-Thani',
-    'Jumada al-Ula','Jumada al-Akhira','Rajab','Sha\'ban',
-    'Ramadan','Shawwal','Dhul Qi\'dah','Dhul Hijjah'
-  ];
-  return `${day} ${hijriMonths[month - 1]} ${year} H`;
+function toHijri(date) {
+  try {
+    const s = new Intl.DateTimeFormat('fr-FR-u-ca-islamic-umalqura', {
+      day: 'numeric', month: 'long', year: 'numeric'
+    }).format(date);
+    if (/\d/.test(s)) return s.replace(/\s*(AH|ap\. J\.-C\.)\s*$/i, '') + ' H';
+  } catch (e) { /* repli */ }
+  return toHijriFallback(date);
 }
 
 // ============================================================
-// UI STATE
+// UTILITAIRES UI
 // ============================================================
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
 let currentDate = new Date();
+currentDate.setHours(12, 0, 0, 0); // midi : évite tout souci de changement d'heure
 let currentLocation = null;
 let timerInterval = null;
+let errorTimeout = null;
 
 const cityInput    = document.getElementById('cityInput');
 const autocomplete = document.getElementById('autocompleteList');
@@ -820,128 +683,108 @@ let isMonthViewActive = false;
 function showError(msg) {
   errorMsg.textContent = msg;
   errorMsg.style.display = 'block';
-  setTimeout(() => { errorMsg.style.display = 'none'; }, 4000);
+  clearTimeout(errorTimeout);
+  errorTimeout = setTimeout(() => { errorMsg.style.display = 'none'; }, 4000);
 }
 
-function showLoading(show) {
-  loadingEl.style.display = show ? 'block' : 'none';
-}
+function showLoading(show) { loadingEl.style.display = show ? 'block' : 'none'; }
 
 function updateDateDisplay() {
-  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  dateGreg.textContent = currentDate.toLocaleDateString('fr-FR', options);
+  dateGreg.textContent = currentDate.toLocaleDateString('fr-FR',
+    { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
   dateHijri.textContent = toHijri(currentDate);
 }
 updateDateDisplay();
 
 // ============================================================
-// THEME TOGGLE
+// THÈME
 // ============================================================
 const themeToggle = document.getElementById('themeToggle');
 const bodyEl = document.body;
 
-// Charger le thème sauvegardé ou utiliser le préférence système
 function loadTheme() {
-  const saved = localStorage.getItem('theme');
+  let saved = null;
+  try { saved = localStorage.getItem('theme'); } catch (e) {}
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const isDark = saved ? saved === 'dark' : prefersDark;
-  
-  if (isDark) {
-    bodyEl.classList.remove('light-theme');
-    themeToggle.textContent = '🌙';
-  } else {
-    bodyEl.classList.add('light-theme');
-    themeToggle.textContent = '☀️';
-  }
+  bodyEl.classList.toggle('light-theme', !isDark);
+  themeToggle.textContent = isDark ? '🌙' : '☀️';
 }
 
 themeToggle.addEventListener('click', () => {
   const isLight = bodyEl.classList.toggle('light-theme');
   themeToggle.textContent = isLight ? '☀️' : '🌙';
-  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  try { localStorage.setItem('theme', isLight ? 'light' : 'dark'); } catch (e) {}
 });
-
-// Appliquer le thème sauvegardé ou système au chargement
 loadTheme();
 
 // ============================================================
-// RENDER PRAYERS
+// AFFICHAGE DES PRIÈRES
 // ============================================================
 const PRAYERS = [
-  { key: 'Fajr',    nameFr: 'Fajr',    nameAr: 'الفجر',   icon: '🌙' },
+  { key: 'Fajr',    nameFr: 'Fajr',     nameAr: 'الفجر',   icon: '🌙' },
   { key: 'Sunrise', nameFr: 'Chourouk', nameAr: 'الشروق',  icon: '🌅' },
-  { key: 'Dhuhr',   nameFr: 'Dhuhr',   nameAr: 'الظهر',   icon: '☀️' },
-  { key: 'Asr',     nameFr: 'Asr',     nameAr: 'العصر',   icon: '🌤️' },
-  { key: 'Maghrib', nameFr: 'Maghrib', nameAr: 'المغرب',  icon: '🌆' },
-  { key: 'Isha',    nameFr: 'Isha',    nameAr: 'العشاء',  icon: '🌃' },
+  { key: 'Dhuhr',   nameFr: 'Dhuhr',    nameAr: 'الظهر',   icon: '☀️' },
+  { key: 'Asr',     nameFr: 'Asr',      nameAr: 'العصر',   icon: '🌤️' },
+  { key: 'Maghrib', nameFr: 'Maghrib',  nameAr: 'المغرب',  icon: '🌆' },
+  { key: 'Isha',    nameFr: 'Isha',     nameAr: 'العشاء',  icon: '🌃' },
 ];
 
-function timeStringToMinutes(ts) {
-  if (ts === '--:--') return -1;
-  const [h, m] = ts.split(':').map(Number);
-  return h * 60 + m;
-}
+function fmtCoord(v, pos, neg) { return `${Math.abs(v).toFixed(4)}° ${v >= 0 ? pos : neg}`; }
 
-function renderPrayers(times, locName, lat, lng) {
+function renderPrayers(times, loc) {
   if (timerInterval) clearInterval(timerInterval);
 
   function getHTML() {
-    const now = new Date();
-    const isToday = (
-      currentDate.getFullYear() === now.getFullYear() &&
-      currentDate.getMonth() === now.getMonth() &&
-      currentDate.getDate() === now.getDate()
-    );
-    const nowMinutes = now.getHours() * 60 + now.getMinutes();
+    // "Maintenant" exprimé à l'heure LOCALE de la ville (pas celle du navigateur)
+    const offset = getTzOffset(currentDate, loc);
+    const nowLoc = new Date(Date.now() + offset * 3600000);
+    const isToday = nowLoc.getUTCFullYear() === currentDate.getFullYear()
+                 && nowLoc.getUTCMonth() === currentDate.getMonth()
+                 && nowLoc.getUTCDate() === currentDate.getDate();
+    const nowMinutes = nowLoc.getUTCHours() * 60 + nowLoc.getUTCMinutes();
 
-    // Find next prayer
-    const prayerTimes = PRAYERS.map(p => ({
-      ...p,
-      timeStr: decimalToTime(times[p.key]),
-      minutes: timeStringToMinutes(decimalToTime(times[p.key]))
-    }));
+    // Minutes brutes (Isha peut dépasser 24h en été)
+    const prayerTimes = PRAYERS.map(p => {
+      const v = times[p.key];
+      return {
+        ...p,
+        timeStr: decimalToTime(v),
+        minutes: (v === null || isNaN(v)) ? -1 : Math.round(v * 60)
+      };
+    });
 
-    // Current/next prayer for today
     let currentIdx = -1;
     let nextIdx = -1;
-    
+
     if (isToday) {
       for (let i = prayerTimes.length - 1; i >= 0; i--) {
-        if (prayerTimes[i].minutes !== -1 && nowMinutes >= prayerTimes[i].minutes) {
-          currentIdx = i;
-          break;
-        }
+        if (prayerTimes[i].minutes !== -1 && nowMinutes >= prayerTimes[i].minutes) { currentIdx = i; break; }
       }
-      // Next prayer
       for (let i = 0; i < prayerTimes.length; i++) {
-        if (prayerTimes[i].minutes !== -1 && prayerTimes[i].minutes > nowMinutes) {
-          nextIdx = i;
-          break;
-        }
+        if (prayerTimes[i].minutes !== -1 && prayerTimes[i].minutes > nowMinutes) { nextIdx = i; break; }
       }
+      // Avant Fajr (y compris après minuit) : c'est encore la nuit d'Isha
+      if (currentIdx === -1) currentIdx = prayerTimes.length - 1;
     }
 
-    function getRemainingText(idx) {
-      if (!isToday || idx < 0) return '';
-      const pt = prayerTimes[idx];
-      if (pt.minutes === -1) return '';
-      const diff = pt.minutes - nowMinutes;
+    function remainingText(idx) {
+      const diff = prayerTimes[idx].minutes - nowMinutes;
       if (diff <= 0) return 'En cours';
       const h = Math.floor(diff / 60);
       const m = diff % 60;
-      if (h === 0) return `dans ${m} min`;
-      return `dans ${h}h${String(m).padStart(2,'0')}`;
+      return h === 0 ? `dans ${m} min` : `dans ${h}h${String(m).padStart(2, '0')}`;
     }
 
     const cards = prayerTimes.map((p, i) => {
       const isCurrent = isToday && i === currentIdx;
       const isNext = isToday && i === nextIdx;
-      const remaining = isNext ? getRemainingText(nextIdx) : (isCurrent ? 'En cours' : '');
+      const remaining = isNext ? remainingText(nextIdx) : (isCurrent ? 'En cours' : '');
       const nextBadge = isNext ? `<span class="next-badge">Suivante</span>` : '';
       return `
         <div class="prayer-card ${isCurrent ? 'current' : ''}">
           <div class="prayer-left">
-            <div class="prayer-index">0${i+1}</div>
+            <div class="prayer-index">0${i + 1}</div>
             <div class="prayer-icon">${p.icon}</div>
             <div class="prayer-names">
               <div class="prayer-name-fr">${p.nameFr}${nextBadge}</div>
@@ -955,147 +798,118 @@ function renderPrayers(times, locName, lat, lng) {
         </div>`;
     }).join('');
 
-    const coordStr = `${Math.abs(lat).toFixed(4)}° ${lat >= 0 ? 'N' : 'S'}, ${Math.abs(lng).toFixed(4)}° ${lng >= 0 ? 'E' : 'O'}`;
+    const utcLabel = `UTC${offset >= 0 ? '+' : '−'}${Math.abs(offset)}`;
 
     return `
       <div class="location-info">
-        <div class="location-name">${locName}</div>
-        <div class="location-coords">LAT: ${Math.abs(lat).toFixed(4)}° ${lat >= 0 ? 'N' : 'S'} // LNG: ${Math.abs(lng).toFixed(4)}° ${lng >= 0 ? 'E' : 'O'}</div>
+        <div class="location-name">${esc(loc.name)}</div>
+        <div class="location-coords">${fmtCoord(loc.lat, 'N', 'S')} · ${fmtCoord(loc.lng, 'E', 'O')} · ${utcLabel}</div>
       </div>
       <div class="prayers-grid">${cards}</div>
       <div class="method-badge">
-        SYS.INFO: MWL PROTOCOL | FAJR 18° | ISHA 17° | ASR: SHAFI'I
+        MWL · Fajr 18° · Isha 17° · Asr ${ASR_SHADOW_FACTOR === 1 ? "Shafi'i" : 'Hanafi'}
       </div>`;
   }
 
   results.innerHTML = getHTML();
-  
-  if (isMonthViewActive) {
-      renderMonthTable(lat, lng, locName);
-  }
+  if (isMonthViewActive) renderMonthTable(loc);
 
-  // Update every minute
-  timerInterval = setInterval(() => {
-    results.innerHTML = getHTML();
-  }, 30000);
+  timerInterval = setInterval(() => { results.innerHTML = getHTML(); }, 30000);
 }
 
 // ============================================================
-// RENDER MONTH TABLE
+// TABLEAU MENSUEL
 // ============================================================
-function renderMonthTable(lat, lng, locName) {
-    const year = currentDate.getFullYear();
-    const month = currentDate.getMonth();
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-    const today = new Date();
-    const isCurrentMonth = today.getFullYear() === year && today.getMonth() === month;
-    
-    let tableHTML = `
-        <h3 style="margin-bottom: 15px; text-align:center;">
-          HORAIRES DES PRIÈRES - ${currentDate.toLocaleDateString('fr-FR', {month: 'long', year: 'numeric'}).toUpperCase()}<br>
-          <span style="font-size: 0.7em; color: var(--text-dim); text-transform: uppercase;">${locName}</span>
-        </h3>
-        <table class="month-table">
-            <thead>
-                <tr>
-                    <th>JOUR</th>
-                    <th>FAJR</th>
-                    <th>CHOUROUK</th>
-                    <th>DHUHR</th>
-                    <th>ASR</th>
-                    <th>MAGHRIB</th>
-                    <th>ISHA</th>
-                </tr>
-            </thead>
-            <tbody>
-    `;
+function renderMonthTable(loc) {
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const nowLoc = new Date(Date.now() + getTzOffset(currentDate, loc) * 3600000);
+  const isCurrentMonth = nowLoc.getUTCFullYear() === year && nowLoc.getUTCMonth() === month;
+  const todayDate = nowLoc.getUTCDate();
 
-    for (let i = 1; i <= daysInMonth; i++) {
-        const d = new Date(year, month, i);
-        const dynamicTzOffset = d.getTimezoneOffset() / -60;
-        const times = calcPrayerTimes(d, lat, lng, dynamicTzOffset);
-        
-        const isTodayRow = isCurrentMonth && today.getDate() === i;
-        
-        if (times) {
-            tableHTML += `
-                <tr class="${isTodayRow ? 'today-row' : ''}">
-                    <td>${i}</td>
-                    <td>${decimalToTime(times.Fajr)}</td>
-                    <td>${decimalToTime(times.Sunrise)}</td>
-                    <td>${decimalToTime(times.Dhuhr)}</td>
-                    <td>${decimalToTime(times.Asr)}</td>
-                    <td>${decimalToTime(times.Maghrib)}</td>
-                    <td>${decimalToTime(times.Isha)}</td>
-                </tr>
-            `;
-        }
+  let html = `
+    <h3 style="margin-bottom: 15px; text-align:center;">
+      HORAIRES DES PRIÈRES — ${esc(currentDate.toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' }).toUpperCase())}<br>
+      <span style="font-size: 0.7em; color: var(--text-dim); text-transform: uppercase;">${esc(loc.name)}</span>
+    </h3>
+    <table class="month-table">
+      <thead>
+        <tr><th>JOUR</th><th>FAJR</th><th>CHOUROUK</th><th>DHUHR</th><th>ASR</th><th>MAGHRIB</th><th>ISHA</th></tr>
+      </thead>
+      <tbody>`;
+
+  for (let i = 1; i <= daysInMonth; i++) {
+    const d = new Date(year, month, i, 12);
+    const times = calcPrayerTimes(d, loc.lat, loc.lng, getTzOffset(d, loc));
+    const cls = (isCurrentMonth && todayDate === i) ? 'today-row' : '';
+    if (times) {
+      html += `<tr class="${cls}"><td>${i}</td>
+        <td>${decimalToTime(times.Fajr)}</td><td>${decimalToTime(times.Sunrise)}</td>
+        <td>${decimalToTime(times.Dhuhr)}</td><td>${decimalToTime(times.Asr)}</td>
+        <td>${decimalToTime(times.Maghrib)}</td><td>${decimalToTime(times.Isha)}</td></tr>`;
+    } else {
+      html += `<tr class="${cls}"><td>${i}</td><td>--:--</td><td>--:--</td><td>--:--</td><td>--:--</td><td>--:--</td><td>--:--</td></tr>`;
     }
-    
-    tableHTML += `</tbody></table>`;
-    monthTableContainer.innerHTML = tableHTML;
+  }
+
+  html += `</tbody></table>`;
+  monthTableContainer.innerHTML = html;
 }
 
 monthBtn.addEventListener('click', () => {
-    isMonthViewActive = !isMonthViewActive;
-    if (isMonthViewActive) {
-        monthTableContainer.style.display = 'block';
-        printBtn.style.display = 'inline-block';
-        monthBtn.textContent = "MASQUER CALENDRIER MENSUEL";
-        monthBtn.classList.add('btn-active');
-        if (currentLocation) {
-            renderMonthTable(currentLocation.lat, currentLocation.lng, currentLocation.name);
-        }
-    } else {
-        monthTableContainer.style.display = 'none';
-        printBtn.style.display = 'none';
-        monthBtn.textContent = "AFFICHER CALENDRIER MENSUEL";
-        monthBtn.classList.remove('btn-active');
-    }
+  isMonthViewActive = !isMonthViewActive;
+  if (isMonthViewActive) {
+    monthTableContainer.style.display = 'block';
+    printBtn.style.display = 'inline-flex';
+    monthBtn.textContent = 'MASQUER LE CALENDRIER MENSUEL';
+    monthBtn.classList.add('btn-active');
+    if (currentLocation) renderMonthTable(currentLocation);
+  } else {
+    monthTableContainer.style.display = 'none';
+    printBtn.style.display = 'none';
+    monthBtn.textContent = 'AFFICHER LE CALENDRIER MENSUEL';
+    monthBtn.classList.remove('btn-active');
+  }
 });
 
-printBtn.addEventListener('click', () => {
-    window.print();
-});
+printBtn.addEventListener('click', () => window.print());
 
-function compute(lat, lng, tzOffset_ignored, locName) {
-  // [CORRECTION] Calcul dynamique du fuseau horaire (Heure d'été/hiver)
-  // On ignore le tzOffset passé en paramètre (qui vient souvent d'une BDD fixe)
-  // et on récupère le décalage actuel exact sur la machine de l'utilisateur.
-  const dynamicTzOffset = currentDate.getTimezoneOffset() / -60;
-  
-  const times = calcPrayerTimes(currentDate, lat, lng, dynamicTzOffset);
-  
+function compute(loc) {
+  const times = calcPrayerTimes(currentDate, loc.lat, loc.lng, getTzOffset(currentDate, loc));
   if (!times) {
-    showError('Impossible de calculer les horaires pour cette localisation.');
+    showError('Impossible de calculer les horaires pour cette localisation à cette date.');
     return;
   }
-  renderPrayers(times, locName, lat, lng);
+  renderPrayers(times, loc);
 }
 
 // ============================================================
-// AUTOCOMPLETE & DATE NAVIGATION
+// AUTOCOMPLÉTION & NAVIGATION PAR DATE
 // ============================================================
+function stripAccents(s) { return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
+
 function filterCities(query) {
   if (!query || query.length < 2) return [];
-  const q = query.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  return CITIES.filter(c => {
-    const name = c.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    const country = c.country.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    return name.startsWith(q) || country.startsWith(q);
-  }).slice(0, 8);
+  const q = stripAccents(query);
+  return CITIES.filter(c => stripAccents(c.name).startsWith(q) || stripAccents(c.country || '').startsWith(q)).slice(0, 8);
 }
 
+function cityToLocation(c) {
+  const loc = { name: `${c.name}, ${c.country}`, lat: +c.lat, lng: +c.lng, tz: c.tz };
+  if (typeof c.tz === 'string' && isNaN(Number(c.tz))) loc.tzName = c.tz;
+  return loc;
+}
+
+let lastMatches = [];
+
 cityInput.addEventListener('input', () => {
-  const matches = filterCities(cityInput.value);
-  if (matches.length === 0) {
-    autocomplete.classList.remove('show');
-    return;
-  }
-  autocomplete.innerHTML = matches.map(c => `
-    <div class="autocomplete-item" data-name="${c.name}" data-country="${c.country}" data-lat="${c.lat}" data-lng="${c.lng}" data-tz="${c.tz}">
-      <div>${c.name}</div>
-      <div class="city-country">${c.country}</div>
+  lastMatches = filterCities(cityInput.value);
+  if (lastMatches.length === 0) { autocomplete.classList.remove('show'); return; }
+  autocomplete.innerHTML = lastMatches.map((c, i) => `
+    <div class="autocomplete-item" data-idx="${i}">
+      <div>${esc(c.name)}</div>
+      <div class="city-country">${esc(c.country)}</div>
     </div>`).join('');
   autocomplete.classList.add('show');
 });
@@ -1103,22 +917,19 @@ cityInput.addEventListener('input', () => {
 autocomplete.addEventListener('click', (e) => {
   const item = e.target.closest('.autocomplete-item');
   if (!item) return;
-  const { name, country, lat, lng, tz } = item.dataset;
-  cityInput.value = name;
+  const c = lastMatches[+item.dataset.idx];
+  if (!c) return;
+  cityInput.value = c.name;
   autocomplete.classList.remove('show');
-  currentLocation = { name: `${name}, ${country}`, lat: +lat, lng: +lng, tz: +tz };
-  compute(+lat, +lng, +tz, `${name}, ${country}`);
+  currentLocation = cityToLocation(c);
+  compute(currentLocation);
 });
 
 document.addEventListener('click', (e) => {
-  if (!e.target.closest('.search-wrapper')) {
-    autocomplete.classList.remove('show');
-  }
+  if (!e.target.closest('.search-wrapper')) autocomplete.classList.remove('show');
 });
 
-cityInput.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') searchBtn.click();
-});
+cityInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') searchBtn.click(); });
 
 searchBtn.addEventListener('click', () => {
   const q = cityInput.value.trim();
@@ -1129,31 +940,23 @@ searchBtn.addEventListener('click', () => {
     return;
   }
   const c = matches[0];
-  currentLocation = { name: `${c.name}, ${c.country}`, lat: c.lat, lng: c.lng, tz: c.tz };
   cityInput.value = c.name;
   autocomplete.classList.remove('show');
-  compute(c.lat, c.lng, c.tz, `${c.name}, ${c.country}`);
+  currentLocation = cityToLocation(c);
+  compute(currentLocation);
 });
 
-// Navigate days
-prevDay.addEventListener('click', () => {
-  currentDate.setDate(currentDate.getDate() - 1);
+function shiftDay(delta) {
+  currentDate.setDate(currentDate.getDate() + delta);
+  currentDate.setHours(12, 0, 0, 0);
   updateDateDisplay();
-  if (currentLocation) {
-    compute(currentLocation.lat, currentLocation.lng, currentLocation.tz, currentLocation.name);
-  }
-});
-
-nextDay.addEventListener('click', () => {
-  currentDate.setDate(currentDate.getDate() + 1);
-  updateDateDisplay();
-  if (currentLocation) {
-    compute(currentLocation.lat, currentLocation.lng, currentLocation.tz, currentLocation.name);
-  }
-});
+  if (currentLocation) compute(currentLocation);
+}
+prevDay.addEventListener('click', () => shiftDay(-1));
+nextDay.addEventListener('click', () => shiftDay(1));
 
 // ============================================================
-// GEOLOCATION
+// GÉOLOCALISATION
 // ============================================================
 geoBtn.addEventListener('click', () => {
   if (!navigator.geolocation) {
@@ -1164,24 +967,27 @@ geoBtn.addEventListener('click', () => {
   navigator.geolocation.getCurrentPosition(
     async (pos) => {
       const { latitude: lat, longitude: lng } = pos.coords;
-      let locName = `${lat.toFixed(4)}° N, ${Math.abs(lng).toFixed(4)}°`;
-      
+      let locName = `${fmtCoord(lat, 'N', 'S')}, ${fmtCoord(lng, 'E', 'O')}`;
+
       try {
         const res = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json&accept-language=fr`);
         const data = await res.json();
-        const city = data.address?.city || data.address?.town || data.address?.village || data.address?.municipality || '';
-        const country = data.address?.country || '';
+        const a = data.address || {};
+        const city = a.city || a.town || a.village || a.municipality || '';
+        const country = a.country || '';
         if (city) locName = country ? `${city}, ${country}` : city;
-      } catch(e) {
-        console.warn('Erreur lors du reverse geocoding, utilisation des coordonnées.');
+      } catch (e) {
+        console.warn('Reverse geocoding impossible, utilisation des coordonnées.');
       }
-      
+
       showLoading(false);
-      currentLocation = { name: locName, lat, lng, tz: 0 }; // tz ignoré avec la correction
+      // Sur place : le fuseau du navigateur (nom IANA) gère correctement l'heure d'été
+      const tzName = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      currentLocation = { name: locName, lat, lng, tz: null, tzName };
       cityInput.value = locName;
-      compute(lat, lng, 0, locName);
+      compute(currentLocation);
     },
-    (err) => {
+    () => {
       showLoading(false);
       showError('Erreur de géolocalisation. Veuillez vérifier vos permissions.');
     }
