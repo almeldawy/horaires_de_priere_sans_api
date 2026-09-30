@@ -495,6 +495,8 @@ const RAD = 180 / Math.PI;
 const MWL_FAJR_ANGLE = 18.0;
 const MWL_ISHA_ANGLE = 17.0;
 const ASR_SHADOW_FACTOR = 1; // 2 pour Hanafi
+const MAGHRIB_OFFSET_MIN = 3; // minutes ajoutées au coucher du soleil pour le Maghrib
+const FAJR_ADJUST_SEC = -15;  // ajustement empirique du Fajr (calé sur avril 2027 et juin 2026)
 
 function normDeg(x) { x %= 360; return x < 0 ? x + 360 : x; }
 
@@ -549,24 +551,30 @@ function calcPrayerTimes(date, lat, lng, tzOffset) {
 
   const Sunrise = Dhuhr - sunH;
   const Sunset  = Dhuhr + sunH;
+  const Maghrib = Sunset + MAGHRIB_OFFSET_MIN / 60;
 
-  // Fajr et Isha calculés séparément, durée plafonnée à 1/7 de la nuit
-  // (évite les sauts brusques en été aux latitudes élevées)
-  const night = (Sunrise + 24) - Sunset;
-  const cap = night / 7;
+  // Règle des hautes latitudes "angle/60" : quand l'angle (18° / 17°) est inatteignable
+  // ou donne un crépuscule trop long, Fajr et Isha sont limités à (angle/60) x durée de la nuit.
+  // Nuit = du Maghrib au lever du soleil suivant.
+  const night = (Sunrise + 24) - Maghrib;
+  const fajrCap = night * MWL_FAJR_ANGLE / 60;
+  const ishaCap = night * MWL_ISHA_ANGLE / 60;
   const fajrH = hourAngle(-MWL_FAJR_ANGLE, lat, decl);
   const ishaH = hourAngle(-MWL_ISHA_ANGLE, lat, decl);
 
   const fajrDelta = fajrH === null ? Infinity : Sunrise - (Dhuhr - fajrH);
-  const ishaDelta = ishaH === null ? Infinity : (Dhuhr + ishaH) - Sunset;
+  const ishaDelta = ishaH === null ? Infinity : (Dhuhr + ishaH) - Maghrib;
 
-  const Fajr = Sunrise - Math.min(fajrDelta, cap);
-  const Isha = Sunset + Math.min(ishaDelta, cap);
+  const Fajr = Sunrise - Math.min(fajrDelta, fajrCap) + FAJR_ADJUST_SEC / 3600;
+  const Isha = Maghrib + Math.min(ishaDelta, ishaCap);
 
   const asrH = asrHourAngle(lat, decl, ASR_SHADOW_FACTOR);
   const Asr = asrH !== null ? Dhuhr + asrH : null;
 
-  return { Fajr, Sunrise, Dhuhr, Asr, Maghrib: Sunset, Isha };
+  // Milieu de la nuit : entre le Maghrib et le Fajr
+  const Midnight = (Maghrib + (Fajr + 24)) / 2;
+
+  return { Fajr, Sunrise, Dhuhr, Asr, Maghrib, Isha, Midnight };
 }
 
 function decimalToTime(decimal) {
@@ -807,7 +815,8 @@ function renderPrayers(times, loc) {
       </div>
       <div class="prayers-grid">${cards}</div>
       <div class="method-badge">
-        MWL · Fajr 18° · Isha 17° · Asr ${ASR_SHADOW_FACTOR === 1 ? "Shafi'i" : 'Hanafi'}
+        Milieu de la nuit : <strong>${decimalToTime(times.Midnight)}</strong><br>
+        MWL · Fajr 18° · Isha 17° · Asr ${ASR_SHADOW_FACTOR === 1 ? "Shafi'i" : 'Hanafi'} · Maghrib +${MAGHRIB_OFFSET_MIN} min
       </div>`;
   }
 
