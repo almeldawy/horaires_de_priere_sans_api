@@ -1,0 +1,24 @@
+Voici les changements faits dans salat-api.html, en quatre étapes. Le reste du fichier (calcul des horaires, recherche, thème, navigation par jour) n’a pas été touché.
+
+1. Jours de la semaine dans le calendrier mensuel
+
+Le tableau a une colonne de plus : « JOUR » affiche le nom du jour (Lundi, Mardi, etc.) et « DATE » le numéro.
+Les lignes sans horaire calculable (--:--) ont aussi ces deux colonnes.
+
+2. Couleur des week-ends à l’écran
+
+Les samedis et dimanches ont un fond et un texte ambrés, avec une version pour le thème sombre et une pour le thème clair.
+Les lignes de week-end ont aussi un effet au survol.
+La ligne du jour actuel garde sa couleur bleue, même un week-end.
+
+3. Impression
+
+Les week-ends s’impriment en jaune clair avec le texte en noir, et l’impression des couleurs de fond est forcée.
+Le surlignage du jour actuel est supprimé à l’impression : plus de gras ni de fond gris. Si ce jour tombe un week-end, il garde seulement la couleur du week-end.
+
+4. Navigation par mois
+
+Deux flèches ◀ ▶ de part et d’autre du titre du calendrier changent le mois, avec passage automatique d’une année à l’autre.
+Le calendrier a son propre mois affiché, indépendant des flèches de jour du haut de page. À chaque ouverture, il repart sur le mois de la date sélectionnée.
+Le titre suit le mois affiché, et le jour actuel n’est surligné que dans le mois en cours.
+Les flèches sont masquées à l’impression.
