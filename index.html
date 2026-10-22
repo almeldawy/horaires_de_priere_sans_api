@@ -657,19 +657,35 @@ function toHijriFallback(date) {
   const month = Math.floor((24 * L3) / 709);
   const day = L3 - Math.floor((709 * month) / 24);
   const year = 30 * N + J - 30;
-  const names = ['Muharram','Safar','Rabi al-Awwal','Rabi al-Thani','Jumada al-Ula','Jumada al-Akhira',
-                 'Rajab','Sha\'ban','Ramadan','Shawwal','Dhul Qi\'dah','Dhul Hijjah'];
-  return `${day} ${names[month - 1]} ${year} H`;
+  return `${day} ${HIJRI_MONTHS_FR[month - 1]} ${year} H`;
 }
+
+// Noms des mois hégiriens : écrits ici (et non lus depuis Intl) car certains navigateurs
+// mobiles n'ont pas les noms de mois hégiriens en français et affichent des mois grégoriens.
+const HIJRI_MONTHS_FR = ['mouharram','safar','rabia al awal','rabia ath-thani','joumada al oula','joumada ath-thania',
+                         'rajab','chaabane','ramadan','chawwal','dhou al qi`da','dhou al-hijja'];
 
 function toHijri(date) {
   try {
-    const s = new Intl.DateTimeFormat('fr-FR-u-ca-islamic-umalqura', {
-      day: 'numeric', month: 'long', year: 'numeric'
-    }).format(date);
-    if (/\d/.test(s)) return s.replace(/\s*(AH|ap\. J\.-C\.)\s*$/i, '') + ' H';
+    // On ne demande à Intl que des NOMBRES (jour, numéro de mois, année), toujours fiables ;
+    // le nom du mois vient de notre liste.
+    const fmt = new Intl.DateTimeFormat('fr-FR-u-ca-islamic-umalqura-nu-latn', {
+      day: 'numeric', month: 'numeric', year: 'numeric'
+    });
+    // Certains navigateurs ignorent le calendrier demandé : on vérifie le calendrier
+    // réellement utilisé ET la cohérence des valeurs avant de les accepter.
+    const cal = String(fmt.resolvedOptions().calendar || '').toLowerCase();
+    if (cal.indexOf('islamic') === 0) {
+      const parts = fmt.formatToParts(date);
+      const get = (t) => { const p = parts.find(x => x.type === t); return p ? parseInt(p.value, 10) : NaN; };
+      const d = get('day'), m = get('month'), y = get('year');
+      if (d >= 1 && d <= 30 && m >= 1 && m <= 12 && y > 1000 && y < 1900) {
+        return `${d} ${HIJRI_MONTHS_FR[m - 1]} ${y} H`;
+      }
+    }
   } catch (e) { /* repli */ }
-  return toHijriFallback(date);
+  // Calcul arithmétique de secours : peut différer d'un jour du calendrier Umm al-Qura
+  return '≈ ' + toHijriFallback(date);
 }
 
 // ============================================================
